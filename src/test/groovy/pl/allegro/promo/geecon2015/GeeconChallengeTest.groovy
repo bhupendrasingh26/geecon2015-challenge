@@ -94,7 +94,7 @@ class GeeconChallengeTest extends Specification {
     def "should return null as transaction amount in report when failed to fetch transactions data"() {
         given:
         userService(userServer).whenRequested("ee481f6c-dcce-41d1-89b8-bbc268dec843").returns("User A").teach()
-        userService(userServer).whenRequested("fb0d5e34-6317-4add-a8d9-6e4ae415f31e").fails().teach()
+        userService(userServer).whenRequested("fb0d5e34-6317-4add-a8d9-6e4ae415f31e").returns("User B").teach()
 
         transactionService(transactionServer).whenRequested("ee481f6c-dcce-41d1-89b8-bbc268dec843").returns(10).teach()
         transactionService(transactionServer).whenRequested("fb0d5e34-6317-4add-a8d9-6e4ae415f31e").fails().teach()

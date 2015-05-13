@@ -5,9 +5,9 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class ReportedUser {
-    
+
     private final UUID id;
-    
+
     private final String name;
 
     private final BigDecimal transactionsAmount;
@@ -36,7 +36,7 @@ public class ReportedUser {
         if (!(o instanceof ReportedUser)) return false;
 
         ReportedUser that = (ReportedUser) o;
-        return id.equals(that.id) && name.equals(that.name) && transactionsAmount.equals(that.transactionsAmount);
+        return id.equals(that.id) && name.equals(that.name) && Objects.equals(transactionsAmount, that.transactionsAmount);
     }
 
     @Override
